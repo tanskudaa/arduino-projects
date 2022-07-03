@@ -27,7 +27,7 @@ enum
     RS = 10, // LCD register switch
     E = 11,  // LCD enable
 
-    TEMP = A0, // Temperature sensor
+    TMP = A0, // Temperature sensor
 };
 
 const char CELSIUS_SYMBOL = 0b11011111; // From LCD datasheet
@@ -124,7 +124,7 @@ void loop()
         ie. 0.75V => 25°C and 1V => 50°C
         Real temperature in celsius = (tmpV - 0.5) * 100
     */
-    tmpRead = analogRead(TEMP);
+    tmpRead = analogRead(TMP);
     tmpV = (5 * tmpRead) / 1024.0;
     temperature = (tmpV - 0.5) * 100;
 

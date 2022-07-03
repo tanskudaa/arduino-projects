@@ -1,4 +1,7 @@
-initial-setup
-datasheet
-lib
-starting-kit
+*
+
+!.vscode
+!.gitignore
+!README.md
+
+!thermo.ino
