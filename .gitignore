@@ -5,4 +5,5 @@
 !README.md
 
 !thermometer
-!thermometer/**
+!thermometer/thermo.ino
+!thermometer/plot-temperature.r
