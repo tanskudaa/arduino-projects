@@ -1,8 +1,8 @@
 *
 
-!.vscode
 !.gitignore
 !.clang-format
 !README.md
 
-!thermo.ino
+!thermometer
+!thermometer/**
