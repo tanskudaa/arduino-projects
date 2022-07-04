@@ -8,13 +8,13 @@
     This code is public domain
 */
 #include <LiquidCrystal.h>
-#include <TimeLib.h>
+#include <TimeLib.h> // Time by Michael Margolis v1.6.1
 
 #define TIME_HEADER "T" // Header tag for serial time sync message
 #define TIME_REQUEST 7  // ASCII bell character requests a time sync message
 
-const char CELSIUS_SYMBOL = 0b11011111; // From LCD datasheet
-const int SERIAL_OUT_DELAY = 5 * 1000;  // ms
+const char CELSIUS_SYMBOL = 0b11011111;         // From LCD datasheet
+const unsigned long SERIAL_OUT_DELAY = 60000UL; // ms
 
 enum {
     D7 = 9, // LCD data pins
@@ -38,7 +38,7 @@ double temperature;
 char lcdState[2][16],
     newOutput[2][16] = {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
-unsigned long lastSerialOutput = millis() - SERIAL_OUT_DELAY;
+unsigned long lastSerialOutput = 0xffffffffUL - SERIAL_OUT_DELAY;
 
 LiquidCrystal lcd(RS, E, D0, D1, D2, D3, D4, D5, D6, D7);
 
